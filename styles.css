@@ -123,35 +123,33 @@ h1, h2, h3 {
 
 .nav {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 0.8rem 1.5rem; /* Reduced padding */
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .nav-brand {
-    margin-right: auto;
-}
-
-.nav-brand .logo {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    font-weight: 800;
-    font-size: 1.2rem;
-    color: #00ffff;
+}
+
+.nav-brand .logo img {
+    width: 120px; /* Reduced logo size */
+    height: auto;
 }
 
 .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem; /* Reduced gap */
 }
 
 .nav-links a {
     color: #ffffff;
     text-decoration: none;
     font-weight: 500;
+    font-size: 0.9rem; /* Smaller font size */
     transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
@@ -160,6 +158,30 @@ h1, h2, h3 {
     text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav {
+        padding: 0.6rem 1rem; /* Further reduced padding for mobile */
+    }
+    
+    .nav-brand .logo img {
+        width: 100px; /* Smaller logo for mobile */
+    }
+    
+    .nav-links {
+        gap: 1rem; /* Reduced gap for mobile */
+    }
+    
+    .nav-links a {
+        font-size: 0.8rem; /* Smaller font size for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-brand .logo img {
+        width: 80px; /* Even smaller logo for small screens */
+    }
+}
 /* Hero Section */
 .hero {
     min-height: 100vh;
