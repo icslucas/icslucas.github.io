@@ -1,9 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Thecryptovault</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Crypto Vault</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>It works! 🚀</h1>
+  <header>
+    <nav>
+      <div class="logo">CryptoVault</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <h1>Enter The Vault</h1>
+    <p>Exclusive crypto signals. Unlock your trading potential.</p>
+    <button class="cta-btn" onclick="scrollToPricing()">See Plans</button>
+  </section>
+
+  <section id="pricing">
+    <h2>Our Plans</h2>
+    <div class="pricing-cards">
+      <div class="card silver">
+        <h3>Silver</h3>
+        <p>Basic signals, 2 trades/day</p>
+        <p>Price: $49/month</p>
+        <button onclick="buyPlan('Silver')">Buy Now</button>
+      </div>
+      <div class="card gold">
+        <h3>Gold</h3>
+        <p>Advanced signals, 5 trades/day + VIP chat</p>
+        <p>Price: $99/month</p>
+        <button onclick="buyPlan('Gold')">Buy Now</button>
+      </div>
+      <div class="card diamond">
+        <h3>Diamond</h3>
+        <p>All signals, 24/7 alerts + 1-on-1 coaching</p>
+        <p>Price: $199/month</p>
+        <button onclick="buyPlan('Diamond')">Buy Now</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact & Join</h2>
+    <p>Want to join? <a href="https://discord.gg/YOURSERVER" target="_blank">Join our Discord</a> and open a ticket!</p>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
