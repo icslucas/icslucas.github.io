@@ -1,46 +1,565 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Crypto Vault</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Crypto Vault - Premium Trading Signals</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div id="background"></div>
+    <!-- Payment Modal -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Choose Payment Method</h2>
+            <p>Select how you'd like to pay for your membership.</p>
+            <button id="payCard" class="btn-modal">Pay with Card</button>
+            <button id="payCrypto" class="btn-modal">Pay with Crypto</button>
+        </div>
+    </div>
 
-  <header>
-    <h1>The Crypto Vault</h1>
-    <p>Unlock exclusive crypto signals and strategies</p>
-  </header>
+    <!-- Crypto Payment Message Modal -->
+    <div id="cryptoMessageModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Pay with Crypto</h2>
+            <p>Please join our Discord and create a ticket to pay for the membership in crypto.</p>
+            <a href="https://discord.gg/your-discord-invite" target="_blank" class="btn-modal">Join Discord</a>
+        </div>
+    </div>
 
-  <main>
-    <section class="pricing">
-      <h2>Membership Tiers</h2>
-      <div class="tiers">
-        <div class="tier silver" onclick="buyTier('Silver')">
-          <h3>Silver</h3>
-          <p>Basic signals</p>
-          <p class="price">$50/mo</p>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <div class="logo">
+                    <img src="CRYPTO_VAULT-removebg-preview.png" alt="The Crypto Vault" width="200" height="200">
+                </div>
+            </div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#testimonials">Reviews</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+            <div class="gradient-orb orb-4"></div>
+            <div class="gradient-orb orb-5"></div>
+            <div class="grid-overlay"></div>
         </div>
-        <div class="tier gold" onclick="buyTier('Gold')">
-          <h3>Gold</h3>
-          <p>Advanced signals + alerts</p>
-          <p class="price">$100/mo</p>
+        
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <span class="badge-icon">🔥</span>
+                    <span>ELITE TRADING SIGNALS</span>
+                </div>
+                
+                <h1 class="hero-title">
+                    <span class="title-line">THE CRYPTO</span>
+                    <span class="title-line highlight">VAULT</span>
+                </h1>
+                
+                <p class="hero-subtitle">Where Elite Traders Unlock Market Secrets in a Sci-Fi Realm</p>
+                
+                <div class="hero-metrics">
+                    <div class="metric">
+                        <div class="metric-value">92%</div>
+                        <div class="metric-label">Win Rate</div>
+                    </div>
+                    <div class="metric-divider"></div>
+                    <div class="metric">
+                        <div class="metric-value">$2.4M+</div>
+                        <div class="metric-label">Member Profits</div>
+                    </div>
+                    <div class="metric-divider"></div>
+                    <div class="metric">
+                        <div class="metric-value">24/7</div>
+                        <div class="metric-label">Live Signals</div>
+                    </div>
+                </div>
+
+                <div class="cta-section">
+                    <button class="btn-primary-new">
+                        <span class="btn-icon">⚡</span>
+                        <span>ACCESS THE VAULT</span>
+                        <span class="btn-arrow">→</span>
+                    </button>
+                    <div class="trust-indicators">
+                        <div class="trust-item">
+                            <span class="trust-icon">🛡️</span>
+                            <span>7-Day Guarantee</span>
+                        </div>
+                        <div class="trust-item">
+                            <span class="trust-icon">⚡</span>
+                            <span>Instant Access</span>
+                        </div>
+                        <div class="trust-item">
+                            <span class="trust-icon">👑</span>
+                            <span>VIP Community</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="trading-dashboard">
+                    <div class="dashboard-header">
+                        <div class="dashboard-title">Live Trading Signals</div>
+                        <div class="status-indicator">
+                            <span class="status-dot"></span>
+                            <span>LIVE</span>
+                        </div>
+                    </div>
+                    
+                    <div class="signal-cards">
+                        <div class="signal-card profit">
+                            <div class="signal-header">
+                                <span class="crypto-pair">BTC/USDT</span>
+                                <span class="signal-type">LONG</span>
+                            </div>
+                            <div class="signal-price">$67,420</div>
+                            <div class="signal-profit">+594.89% ✅</div>
+                        </div>
+                        
+                        <div class="signal-card profit">
+                            <div class="signal-header">
+                                <span class="crypto-pair">ETH/USDT</span>
+                                <span class="signal-type">SHORT</span>
+                            </div>
+                            <div class="signal-price">$3,245</div>
+                            <div class="signal-profit">+1,624.05% ✅</div>
+                        </div>
+                        
+                        <div class="signal-card active">
+                            <div class="signal-header">
+                                <span class="crypto-pair">SOL/USDT</span>
+                                <span class="signal-type">LONG</span>
+                            </div>
+                            <div class="signal-price">$198.50</div>
+                            <div class="signal-profit">+400.43% ✅</div>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Today's Profit</span>
+                            <span class="stat-value">+$12,847</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Active Signals</span>
+                            <span class="stat-value">7</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="tier diamond" onclick="buyTier('Diamond')">
-          <h3>Diamond</h3>
-          <p>All signals + private chat</p>
-          <p class="price">$200/mo</p>
+        
+        <div class="floating-elements">
+            <div class="floating-icon icon-1">₿</div>
+            <div class="floating-icon icon-2">Ξ</div>
+            <div class="floating-icon icon-3">◊</div>
+            <div class="floating-icon icon-4">⬟</div>
+            <div class="floating-icon icon-5">🚀</div>
+            <div class="floating-icon icon-6">🌌</div>
         </div>
-      </div>
     </section>
-  </main>
 
-  <footer>
-    <p>Join our Discord server to get started: <a href="YOUR_DISCORD_LINK" target="_blank">Click Here</a></p>
-  </footer>
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Turn Market Uncertainty Into Guaranteed Profits</h2>
+            <p class="section-subtitle">Stop gambling with your trades. Our premium signals reveal exactly when and where to enter the market for maximum profit in a futuristic trading ecosystem.</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Premium Crypto Signals</h3>
+                    <p>Daily high-probability trading signals with precise entry, stop-loss, and take-profit levels.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Real-Time Alerts</h3>
+                    <p>Instant notifications sent directly to your phone and Discord for time-sensitive opportunities.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>85%+ Win Rate</h3>
+                    <p>Consistently profitable signals backed by advanced technical analysis and market intelligence.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">👑</div>
+                    <h3>VIP Community</h3>
+                    <p>Exclusive access to our private Discord with market insights and direct trader support.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Market Analysis</h3>
+                    <p>Daily market breakdowns and educational content to improve your trading skills.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Risk Management</h3>
+                    <p>Every signal includes proper risk management with clear stop-loss and position sizing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <script src="script.js"></script>
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>2000+</h3>
+                    <p>Active Members</p>
+                </div>
+                <div class="stat-item">
+                    <h3>85%</h3>
+                    <p>Win Rate</p>
+                </div>
+                <div class="stat-item">
+                    <h3>24/7</h3>
+                    <p>Market Coverage</p>
+                </div>
+                <div class="stat-item">
+                    <h3>4.9/5</h3>
+                    <p>Member Rating</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2>Get Started in 3 Simple Steps</h2>
+            <p class="section-subtitle">Join The Crypto Vault and start receiving profitable signals within minutes.</p>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Join The Vault</h3>
+                    <p>Subscribe to our premium signal service and get instant access to our private Discord community.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Receive Signals</h3>
+                    <p>Get real-time trading signals with clear entry points, stop-loss, and take-profit levels.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Execute & Profit</h3>
+                    <p>Follow our signals and watch your portfolio grow with our proven trading strategies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>What Our Vault Members Say</h2>
+            <p class="section-subtitle">Real results from traders who've unlocked the vault to success.</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"The Crypto Vault changed my trading completely. I went from losing money to consistent profits in just 2 weeks!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>Mike Chen</strong>
+                        <span>Vault Member since 2023</span>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Best signal service I've ever used. The accuracy is incredible and the community support is amazing."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>Sarah Johnson</strong>
+                        <span>Professional Trader</span>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Made back my subscription fee in the first day. These signals are pure gold!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>Alex Rodriguez</strong>
+                        <span>Crypto Investor</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="urgency-banner">
+                <span class="urgency-text">🔥 LIMITED TIME: Only 47 Spots Left This Month!</span>
+                <div class="countdown-timer">
+                    <span class="timer-label">Offer Expires In:</span>
+                    <div class="timer">
+                        <span id="hours">23</span>h
+                        <span id="minutes">59</span>m
+                        <span id="seconds">59</span>s
+                    </div>
+                </div>
+            </div>
+            
+            <h2>🚀 Transform Your Trading Today</h2>
+            <p class="section-subtitle">Join 2,847+ Profitable Traders Making $500-$5,000+ Per Month</p>
+            
+            <div class="social-proof">
+                <div class="proof-item">
+                    <span class="proof-number">2,847+</span>
+                    <span class="proof-text">Active Members</span>
+                </div>
+                <div class="proof-item">
+                    <span class="proof-number">94.7%</span>
+                    <span class="proof-text">Win Rate</span>
+                </div>
+                <div class="proof-item">
+                    <span class="proof-number">$2.8M+</span>
+                    <span class="proof-text">Member Profits</span>
+                </div>
+            </div>
+            
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <div class="badge">BASIC ACCESS</div>
+                    <h3>The Crypto Vault Basic</h3>
+                    <div class="price-container">
+                        <div class="original-price">$99</div>
+                        <div class="price">$49<span>/month</span></div>
+                        <div class="savings-badge">Save 50%</div>
+                    </div>
+                    <p class="plan-description">⚡ Entry-level access for new traders!</p>
+                    
+                    <div class="value-proposition">
+                        <h4>🎯 What You Get:</h4>
+                        <ul>
+                            <li>📈 Daily crypto signals</li>
+                            <li>🧠 Basic market analysis</li>
+                            <li>👥 Community access</li>
+                        </ul>
+                        <div class="total-value">
+                            <span class="value-text">Start Your Journey</span>
+                            <span class="your-price">Only $49/month</span>
+                        </div>
+                    </div>
+                    
+                    <div class="guarantees">
+                        <div class="guarantee-item">
+                            <span class="guarantee-icon">💰</span>
+                            <span>30-Day Money Back Guarantee</span>
+                        </div>
+                        <div class="guarantee-item">
+                            <span class="guarantee-icon">⚡</span>
+                            <span>Instant Access After Payment</span>
+                        </div>
+                        <div class="guarantee-item">
+                            <span class="guarantee-icon">🔒</span>
+                            <span>Secure Payment Processing</span>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-primary cta-button" data-plan="basic">
+                        <span class="btn-text">🚀 Join Basic Tier</span>
+                        <span class="btn-subtext">Start Profiting Today</span>
+                    </button>
+                    
+                    <div class="risk-reversal">
+                        <p>⚠️ <strong>Zero Risk:</strong> Try for 30 days. If you don't make your money back, we'll refund every penny.</p>
+                    </div>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="badge">⭐ PRO ACCESS</div>
+                    <div class="popular-indicator">
+                        <span>🔥 Most Popular Choice</span>
+                        <span class="members-joined">+127 joined today</span>
+                    </div>
+                    <h3>The Crypto Vault PRO</h3>
+                    <div class="price-container">
+                        <div class="original-price">$197</div>
+                        <div class="price">$97<span>/month</span></div>
+                        <div class="savings-badge">Save 51%</div>
+                    </div>
+                    <p class="plan-description">⚡ Pays for itself with just ONE winning trade!</p>
+                    
+                    <div class="value-proposition">
+                        <h4>🎯 What You Get:</h4>
+                        <ul>
+                            <li>📈 Daily trading signals for Crypto & Forex</li>
+                            <li>🧠 Expert market analysis</li>
+                            <li>👥 VIP Discord community</li>
+                            <li>📊 Risk management guidance</li>
+                            <li>⚡ Real-time alerts</li>
+                        </ul>
+                        <div class="total-value">
+                            <span class="value-text">Everything You Need To Profit</span>
+                            <span class="your-price">Only $97/month</span>
+                        </div>
+                    </div>
+                    
+                    <div class="guarantees">
+                        <div class="guarantee-item">
+                            <span class="guarantee-icon">💰</span>
+                            <span>30-Day Money Back Guarantee</span>
+                        </div>
+                        <div class="guarantee-item">
+                            <span class="guarantee-icon">⚡</span>
+                            <span>Instant Access After Payment</span>
+                        </div>
+                        <div class="guarantee-item">
+                            <span class="guarantee-icon">🔒</span>
+                            <span>Secure Payment Processing</span>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-primary cta-button" data-plan="pro">
+                        <span class="btn-text">🚀 YES! Start Profiting Now</span>
+                        <span class="btn-subtext">Join 2,847+ Successful Traders</span>
+                    </button>
+                    
+                    <div class="risk-reversal">
+                        <p>⚠️ <strong>Zero Risk:</strong> Try for 30 days. If you don't make your money back, we'll refund every penny.</p>
+                    </div>
+                    
+                    <div class="recent-activity">
+                        <div class="activity-item">
+                            <span class="activity-dot"></span>
+                            <span>Sarah M. just joined from New York</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-dot"></span>
+                            <span>Mike T. made $1,247 profit this week</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-dot"></span>
+                            <span>Alex R. just joined from London</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="badge">ELITE ACCESS</div>
+                    <h3>The Crypto Vault Elite</h3>
+                    <div class="price-container">
+                        <div class="original-price">$397</div>
+                        <div class="price">$197<span>/month</span></div>
+                        <div class="savings-badge">Save 50%</div>
+                    </div>
+                    <p class="plan-description">⚡ Ultimate access for serious traders!</p>
+                    
+                    <div class="value-proposition">
+                        <h4>🎯 What You Get:</h4>
+                        <ul>
+                            <li>📈 Advanced trading signals for Crypto, Forex & Stocks</li>
+                            <li>🧠 Premium market analysis & forecasts</li>
+                            <li>👥 Elite VIP Discord with private channels</li>
+                            <li>📊 Advanced risk management & tools</li>
+                            <li>⚡ Priority real-time alerts & support</li>
+                            <li>🎓 Exclusive training sessions</li>
+                        </ul>
+                        <div class="total-value">
+                            <span class="value-text">Maximize Your Profits</span>
+                            <span class="your-price">Only $197/month</span>
+                        </div>
+                    </div>
+                    
+                    <div class="guarantees">
+                        <div class="guarantee-item">
+                            <span class="guarantee-icon">💰</span>
+                            <span>30-Day Money Back Guarantee</span>
+                        </div>
+                        <div class="guarantee-item">
+                            <span class="guarantee-icon">⚡</span>
+                            <span>Instant Access After Payment</span>
+                        </div>
+                        <div class="guarantee-item">
+                            <span class="guarantee-icon">🔒</span>
+                            <span>Secure Payment Processing</span>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-primary cta-button" data-plan="elite">
+                        <span class="btn-text">🚀 Join Elite Tier</span>
+                        <span class="btn-subtext">Unlock Ultimate Power</span>
+                    </button>
+                    
+                    <div class="risk-reversal">
+                        <p>⚠️ <strong>Zero Risk:</strong> Try for 30 days. If you don't make your money back, we'll refund every penny.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="CRYPTO_VAULT-removebg-preview.png" alt="The Crypto Vault" width="300" height="300">
+                    </div>
+                    <p>Unlock the vault to trading success</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Product</h4>
+                        <a href="#features">Features</a>
+                        <a href="#pricing">Pricing</a>
+                        <a href="#testimonials">Reviews</a>
+                    </div>
+                    
+                    <div class="link-group">
+                        <h4>Support</h4>
+                        <a href="#contact">Contact</a>
+                        <a href="#">Discord</a>
+                        <a href="#">FAQ</a>
+                    </div>
+                    
+                    <div class="link-group">
+                        <h4>Legal</h4>
+                        <a href="#">Terms</a>
+                        <a href="#">Privacy</a>
+                        <a href="#">Disclaimer</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 The Crypto Vault. All rights reserved.</p>
+                <p>⚠️ Trading involves risk. Past performance does not guarantee future results.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
