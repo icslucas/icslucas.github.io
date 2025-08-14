@@ -7,51 +7,39 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div id="background"></div>
+
   <header>
-    <nav>
-      <div class="logo">CryptoVault</div>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+    <h1>The Crypto Vault</h1>
+    <p>Unlock exclusive crypto signals and strategies</p>
   </header>
 
-  <section id="home" class="hero">
-    <h1>Enter The Vault</h1>
-    <p>Exclusive crypto signals. Unlock your trading potential.</p>
-    <button class="cta-btn" onclick="scrollToPricing()">See Plans</button>
-  </section>
+  <main>
+    <section class="pricing">
+      <h2>Membership Tiers</h2>
+      <div class="tiers">
+        <div class="tier silver" onclick="buyTier('Silver')">
+          <h3>Silver</h3>
+          <p>Basic signals</p>
+          <p class="price">$50/mo</p>
+        </div>
+        <div class="tier gold" onclick="buyTier('Gold')">
+          <h3>Gold</h3>
+          <p>Advanced signals + alerts</p>
+          <p class="price">$100/mo</p>
+        </div>
+        <div class="tier diamond" onclick="buyTier('Diamond')">
+          <h3>Diamond</h3>
+          <p>All signals + private chat</p>
+          <p class="price">$200/mo</p>
+        </div>
+      </div>
+    </section>
+  </main>
 
-  <section id="pricing">
-    <h2>Our Plans</h2>
-    <div class="pricing-cards">
-      <div class="card silver">
-        <h3>Silver</h3>
-        <p>Basic signals, 2 trades/day</p>
-        <p>Price: $49/month</p>
-        <button onclick="buyPlan('Silver')">Buy Now</button>
-      </div>
-      <div class="card gold">
-        <h3>Gold</h3>
-        <p>Advanced signals, 5 trades/day + VIP chat</p>
-        <p>Price: $99/month</p>
-        <button onclick="buyPlan('Gold')">Buy Now</button>
-      </div>
-      <div class="card diamond">
-        <h3>Diamond</h3>
-        <p>All signals, 24/7 alerts + 1-on-1 coaching</p>
-        <p>Price: $199/month</p>
-        <button onclick="buyPlan('Diamond')">Buy Now</button>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Contact & Join</h2>
-    <p>Want to join? <a href="https://discord.gg/YOURSERVER" target="_blank">Join our Discord</a> and open a ticket!</p>
-  </section>
+  <footer>
+    <p>Join our Discord server to get started: <a href="YOUR_DISCORD_LINK" target="_blank">Click Here</a></p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
