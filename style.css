@@ -1,128 +1,84 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
-  color: #D4A444;
-}
-
-/* Body */
+/* Base colors */
 body {
-  background-color: #0e1721;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: #0e1721;
+  color: #fff;
   overflow-x: hidden;
 }
 
-/* Navigation */
-header {
+/* Background lightning & shake */
+#background {
   position: fixed;
-  width: 100%;
   top: 0;
-  background: #0e1721cc;
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem 3rem;
-  z-index: 100;
-}
-.nav-links li {
-  display: inline-block;
-  margin-left: 2rem;
-}
-.nav-links a {
-  color: #D4A444;
-  text-decoration: none;
-  transition: 0.3s;
-}
-.nav-links a:hover {
-  color: #fff;
-  text-shadow: 0 0 10px #D4A444;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, #0e1721 0%, #000 100%);
+  z-index: -1;
+  animation: shake 0.1s infinite alternate;
 }
 
-/* Hero section */
-.hero {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: url('assets/vault-bg.jpg') center/cover no-repeat;
-  text-align: center;
-  position: relative;
-}
-.hero h1 {
-  font-size: 4rem;
-  text-shadow: 0 0 20px #D4A444;
-}
-.hero p {
-  font-size: 1.5rem;
-  margin: 1rem 0;
-}
-.cta-btn {
-  background: #D4A444;
-  color: #0e1721;
-  border: none;
-  padding: 1rem 2rem;
-  cursor: pointer;
-  font-size: 1.2rem;
-  transition: all 0.4s;
-}
-.cta-btn:hover {
-  box-shadow: 0 0 20px #D4A444, 0 0 40px #D4A444 inset;
-  transform: scale(1.05);
+/* Background lightning effect */
+@keyframes shake {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-2px, 2px); }
+  50% { transform: translate(2px, -2px); }
+  75% { transform: translate(-2px, 2px); }
+  100% { transform: translate(2px, -2px); }
 }
 
-/* Pricing section */
-#pricing {
-  padding: 6rem 2rem;
+header {
   text-align: center;
+  padding: 5vh 2vw;
+  animation: neon 1.5s infinite alternate;
 }
-.pricing-cards {
+
+@keyframes neon {
+  from { text-shadow: 0 0 5px #D4A444, 0 0 10px #D4A444; }
+  to { text-shadow: 0 0 20px #D4A444, 0 0 40px #D4A444; }
+}
+
+/* Pricing tiers */
+.tiers {
   display: flex;
   justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
+  padding: 5vh 2vw;
 }
-.card {
-  background: #1a2330;
+
+.tier {
+  background: #111822;
   border: 2px solid #D4A444;
   border-radius: 20px;
   padding: 2rem;
-  width: 300px;
-  transition: 0.5s;
-  cursor: pointer;
-}
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 30px #D4A444;
-}
-
-/* Tier colors */
-.card.silver { border-color: silver; }
-.card.gold { border-color: gold; }
-.card.diamond { border-color: #00ffff; } /* Sci-fi diamond glow */
-
-/* Contact */
-#contact {
-  padding: 4rem 2rem;
+  width: 200px;
   text-align: center;
-}
-#contact a {
-  color: #D4A444;
-  text-decoration: underline;
-}
-#contact a:hover {
-  text-shadow: 0 0 10px #D4A444;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Animations (optional cursor vault effect) */
-body::after {
-  content: '';
-  position: fixed;
-  pointer-events: none;
-  width: 50px;
-  height: 50px;
-  border: 2px solid #D4A444;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  transition: 0.1s;
+.tier:hover {
+  transform: scale(1.1) rotateZ(-2deg);
+  box-shadow: 0 0 30px #D4A444, 0 0 60px #D4A444;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #D4A444;
+}
+
+footer {
+  text-align: center;
+  padding: 3vh 2vw;
+}
+
+a {
+  color: #D4A444;
+  text-decoration: none;
+}
+a:hover {
+  text-shadow: 0 0 10px #D4A444;
 }
