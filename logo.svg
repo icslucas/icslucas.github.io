@@ -1,0 +1,26 @@
+<svg width="200" height="100" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Vault Circle -->
+  <circle cx="80" cy="100" r="60" stroke="#D4AF37" stroke-width="4" fill="none"/>
+  
+  <!-- Inner Bitcoin Symbol -->
+  <circle cx="80" cy="100" r="35" stroke="#D4AF37" stroke-width="2" fill="none"/>
+  
+  <!-- Bitcoin B -->
+  <path d="M70 85 L70 115 M70 85 L80 85 Q85 85 85 90 Q85 95 80 95 L70 95 M70 95 L82 95 Q87 95 87 100 Q87 105 82 105 L70 105 M70 115 L82 115" 
+        stroke="#D4AF37" stroke-width="2" fill="none" stroke-linecap="round"/>
+  
+  <!-- Vault Dots -->
+  <circle cx="80" cy="60" r="3" fill="#D4AF37"/>
+  <circle cx="80" cy="140" r="3" fill="#D4AF37"/>
+  <circle cx="40" cy="100" r="3" fill="#D4AF37"/>
+  <circle cx="120" cy="100" r="3" fill="#D4AF37"/>
+  <circle cx="58" cy="78" r="2" fill="#D4AF37"/>
+  <circle cx="102" cy="78" r="2" fill="#D4AF37"/>
+  <circle cx="58" cy="122" r="2" fill="#D4AF37"/>
+  <circle cx="102" cy="122" r="2" fill="#D4AF37"/>
+  
+  <!-- Text -->
+  <text x="160" y="70" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#D4AF37">THE</text>
+  <text x="160" y="100" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#D4AF37">CRYPTO</text>
+  <text x="160" y="130" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#D4AF37">VAULT</text>
+</svg>
