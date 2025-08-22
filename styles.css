@@ -24,7 +24,6 @@ h1, h2, h3 {
     padding: 0 20px;
 }
 
-/* Custom Cursor */
 .custom-cursor {
     position: fixed;
     width: 20px;
@@ -37,12 +36,10 @@ h1, h2, h3 {
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.5), 0 0 40px rgba(0, 255, 255, 0.3);
     transition: width 0.2s ease, height 0.2s ease;
 }
-
 .custom-cursor.hover {
     width: 30px;
     height: 30px;
 }
-
 /* Modal Styles */
 .modal {
     display: none;
