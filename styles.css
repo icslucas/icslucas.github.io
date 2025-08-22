@@ -31,11 +31,13 @@ h1, h2, h3 {
     border-radius: 50%;
     background: radial-gradient(circle, rgba(0, 255, 255, 0.8), transparent);
     pointer-events: none;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); /* Center the cursor */
     z-index: 9999;
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.5), 0 0 40px rgba(0, 255, 255, 0.3);
     transition: width 0.2s ease, height 0.2s ease;
+    will-change: left, top, width, height; /* Optimize for animations */
 }
+
 .custom-cursor.hover {
     width: 30px;
     height: 30px;
