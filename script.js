@@ -1,20 +1,39 @@
 // Custom Cursor
+// Custom Cursor
 const cursor = document.createElement('div');
 cursor.classList.add('custom-cursor');
 document.body.appendChild(cursor);
 
+// Track mouse movement using clientX and clientY
 document.addEventListener('mousemove', (e) => {
-  cursor.style.left = `${e.pageX}px`;
-  cursor.style.top = `${e.pageY}px`;
+    // Use requestAnimationFrame to optimize performance
+    requestAnimationFrame(() => {
+        cursor.style.left = `${e.clientX}px`;
+        cursor.style.top = `${e.clientY}px`;
+    });
 });
 
-// Add hover effect to interactive elements
-const interactiveElements = document.querySelectorAll('a, button');
+// Add hover effect to all interactive elements
+const interactiveElements = document.querySelectorAll('a, button, .close-modal, .btn-modal, .cta-button');
 interactiveElements.forEach(el => {
-  el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-  el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+    el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+    el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
 });
 
+// Hide custom cursor when mouse leaves the window
+document.addEventListener('mouseleave', () => {
+    cursor.style.display = 'none';
+});
+document.addEventListener('mouseenter', () => {
+    cursor.style.display = 'block';
+});
+
+// Ensure cursor stays visible during scroll
+window.addEventListener('scroll', () => {
+    // Optional: Force cursor to stay aligned during scroll
+    const rect = cursor.getBoundingClientRect();
+    if (rect.left === 0 && rect.top === 0) {
+        cursor.style.display = 'none'; // Hide if out of sync
 // Countdown Timer
 function startCountdown() {
   let hours = 23;
